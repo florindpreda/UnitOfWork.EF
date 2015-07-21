@@ -24,18 +24,21 @@ namespace UnitOfWork.EF.Application
 
 		public void Delete(DeleteProductCommand command)
 		{
-			var product = _productRepository.GetById(command.Id);
-			product.Delete();
-			_productRepository.Update(product);
-
-			var productReviews = _productReviewRepository.GetByProductId(product.Id);
-			foreach(var productReview in productReviews)
+			using (_unitOfWork)
 			{
-				productReview.Delete();
-				_productReviewRepository.Update(productReview);
-			}
+				var product = _productRepository.GetById(command.Id);
+				product.Delete();
+				_productRepository.Update(product);
 
-			_unitOfWork.Commit();
+				var productReviews = _productReviewRepository.GetByProductId(product.Id);
+				foreach (var productReview in productReviews)
+				{
+					productReview.Delete();
+					_productReviewRepository.Update(productReview);
+				}
+
+				_unitOfWork.Commit();
+			}			
 		}
 	}
 }

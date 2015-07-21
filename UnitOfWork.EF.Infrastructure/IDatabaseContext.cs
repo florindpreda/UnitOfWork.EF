@@ -16,5 +16,6 @@ namespace UnitOfWork.EF.Infrastructure
 
 		int SaveChanges();
 		DbEntityEntry Entry(object entity);
+		void Dispose();
 	}
 }

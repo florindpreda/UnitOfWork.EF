@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnitOfWork.EF.Core
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
 		void Commit();	
     }
