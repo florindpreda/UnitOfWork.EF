@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PerHttpRequestLifetimeManager.cs" />
-    <Compile Include="PerBackgroundWorkerRequestLifetimeManager.cs" />
     <Compile Include="UnityConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
