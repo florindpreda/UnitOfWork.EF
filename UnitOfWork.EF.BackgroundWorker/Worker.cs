@@ -20,7 +20,7 @@ namespace UnitOfWork.EF.BackgroundWorker
 
 		public void Run()
 		{
-			var productId = Guid.Parse("6304AC08-ECF8-44DF-8728-1E8F877E8D6C");//replace with an actual product Id from the database
+			var productId = Guid.Parse("287278A8-AA52-4B34-A96F-5C94967F3C58");//replace with an actual product Id from the database
 			var deleteProductCommand = new DeleteProductCommand() { Id = productId };
 
 			_productService.Delete(deleteProductCommand);

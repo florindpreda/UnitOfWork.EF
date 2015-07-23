@@ -41,10 +41,9 @@ namespace UnitOfWork.EF.API.Controllers
 		}
 
 		// DELETE api/values/5
-		public IHttpActionResult Delete([FromUri]DeleteProductCommand command)
+		public void Delete([FromUri]DeleteProductCommand command)
 		{
-			_productService.Delete(command);
-			return Ok();
+			_productService.Delete(command);			
 		}
 	}
 }
